@@ -27,11 +27,7 @@ class GamesController < ApplicationController
 
   def check_grid(word, grid)
     letters = word.upcase.chars
-    if letters.all? { |letter| grid.include?(letter) && letters.count(letter) <= grid.count(letter) }
-      true
-    else
-      false
-    end
+    letters.all? { |letter| grid.include?(letter) && letters.count(letter) <= grid.count(letter) }
   end
 
   def run_game(attempt, grid)
